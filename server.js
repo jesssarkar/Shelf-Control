@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
-const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const flash = require('express-flash')
@@ -12,8 +11,6 @@ const mainRoutes = require('./routes/main')
 const bookRoutes = require('./routes/books')
 
 require('dotenv').config({path: './config/.env'})
-
-require('./config/passport')(passport)
 
 connectDB()
 
@@ -35,8 +32,6 @@ app.use(
   )
 
 // Passport middleware
-app.use(passport.initialize())
-app.use(passport.session())
 
 app.use(flash())
 

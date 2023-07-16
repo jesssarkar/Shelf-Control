@@ -22,10 +22,7 @@ const BookSchema = new mongoose.Schema({
     required: false,
   },
  
-  userId: {
-    type: String,
-    required: true
-  }
+
 })
 
 module.exports = mongoose.model('Book', BookSchema)
